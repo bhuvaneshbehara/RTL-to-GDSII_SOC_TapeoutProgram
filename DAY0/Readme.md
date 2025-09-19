@@ -13,7 +13,7 @@ Welcome to VSD'S RISCV tapeout program.  Let's begin the adventure by exploring 
    After that comes **SoC Integration**, where all the different pieces (processor, memories, peripherals, and GPIOs) are combined into a single chip design. Then the flow moves into the **physical design stage (RTL to GDS)**, which is about arranging the circuit physically on silicon. This includes floorplanning, placement of cells, clock tree synthesis, and routing. The output is a **GDSII file**, which is the final chip layout. Before sending the design to the foundry for manufacturing, it goes through **signoff checks** such as **DRC (to ensure layout follows manufacturing rules)** and **LVS (to make sure the layout matches the design logic)**. Only if these checks are clean, the chip is ready for fabrication.
 
 
-<img width="1132" height="617" alt="Screenshot 2025-09-19 130359" src="https://github.com/user-attachments/assets/f872609e-0c3e-4bd2-bd60-a76483a1937d" />
+<img width="900" height="900" alt="Screenshot 2025-09-19 130359" src="https://github.com/user-attachments/assets/f872609e-0c3e-4bd2-bd60-a76483a1937d" />
 
 
 
