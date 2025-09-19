@@ -1,16 +1,19 @@
 
 # <img width="70" height="70" alt="image" src="https://github.com/user-attachments/assets/143fdf2a-2c67-4cea-9092-b6436290abff" />  RISC-V Tapeout Program
 
-Welcome to VSD'S RISCV tapeout program.  Let's begin the adventure by exploring Day0 topic such as Tool Installation.
+Welcome to VSD'S RISCV tapeout program.  Let's begin the adventure by exploring Day0 topic such as Tool Installation and environment setup.
 
 
 
 
  # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/0fc94fea-b4ab-4ed1-aca0-eebd6ccb00f7" /> Task-1 : <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/4056685c-3bb4-4320-9b9b-65ac505e33a1" /> Summary of the video
-   
+
+   ```bash
    The Video is about SOC chip designed step by step. First, in the design starts with a **specification written in C language**. This is like a rough model of how the chip should behave, and a testbench in C is used to check if the idea works correctly. Next, the design is described in **Verilog (RTL)**, which is a hardware description language. At this stage, different blocks like the processor, peripherals, and analog parts are written in RTL and tested. Once the RTL is ready, it is converted into a **gate-level netlist** through synthesis, which means the design is now expressed in terms of logic gates.
 
    After that comes **SoC Integration**, where all the different pieces (processor, memories, peripherals, and GPIOs) are combined into a single chip design. Then the flow moves into the **physical design stage (RTL to GDS)**, which is about arranging the circuit physically on silicon. This includes floorplanning, placement of cells, clock tree synthesis, and routing. The output is a **GDSII file**, which is the final chip layout. Before sending the design to the foundry for manufacturing, it goes through **signoff checks** such as **DRC (to ensure layout follows manufacturing rules)** and **LVS (to make sure the layout matches the design logic)**. Only if these checks are clean, the chip is ready for fabrication.
+
+```
 
 
 <img width="900" height="900" alt="Screenshot 2025-09-19 130359" src="/IMAGES/SOC.png" />
@@ -285,7 +288,6 @@ $ sudo make install
 
 
 
-
 # magic 
 
 ```bash
@@ -334,24 +336,44 @@ $ make install
 
 
 
+
+# Summary of TASK-2
+
+```bash
+ 
+| Tool        | Purpose                | Status        |
+|:-----------:|:----------------------:|:------------: |
+| Yosys       | Synthesis              | []Done        |
+| Iverilog    | Verilog Simulation     | []Done        |
+| GTKWAVE     | Waveform Analysis      | []Done        | 
+| ngspice     | Circuit Simulatio      | []Done        |
+| Magic       | Layout Design          | []Done        |
+
+```
+
+
+
 # Acquired Knowledge from Week 0
 
+```bash
 
-1. Understanding the Tapeout Flow
+1. Understanding the Tapeout Process
 
-   ----> Gained knowledge about how SOC will be integarted and what are the stages involved to reach tapeout.
-   
-   ----> ASIC design flow: Specificatio -> RTL -> verification -> synthesis -> floorplanning & placement -> routing -> signoff -> GDSII.
+    ----> Learned about the steps necessary in reaching tapeout and how SOC will be integrated.
 
-2. Environment Setup
+    ---> This is the flow of the ASIC design: specification, RTL, verification, synthesis, floorplanning and placement, routing, signoff, and GDSII.
 
-   ----> Installing tools in Linux (Ubuntu).
+ 2. Configuring the Environment
 
-   ----> Setting up git repositories for code and layout.
+    ----> Linux (Ubuntu) tool installation.
 
-   ----> Learned basics of command-line tool usage.
+    ----> Configuring code and designing git repositories.
 
-   ----> Learned when to use sudo command and if any error detected while installing tools then rectify.
+    ----> Acquired the fundamentals of using command-line tools.
+
+    ----> Acquired knowledge of when to use the sudo command and how to fix any errors found during tool installation.
+
+```
 
 
 
