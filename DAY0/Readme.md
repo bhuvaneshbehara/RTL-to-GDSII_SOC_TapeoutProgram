@@ -13,7 +13,7 @@ Welcome to VSD'S RISCV tapeout program.  Let's begin the adventure by exploring 
    After that comes **SoC Integration**, where all the different pieces (processor, memories, peripherals, and GPIOs) are combined into a single chip design. Then the flow moves into the **physical design stage (RTL to GDS)**, which is about arranging the circuit physically on silicon. This includes floorplanning, placement of cells, clock tree synthesis, and routing. The output is a **GDSII file**, which is the final chip layout. Before sending the design to the foundry for manufacturing, it goes through **signoff checks** such as **DRC (to ensure layout follows manufacturing rules)** and **LVS (to make sure the layout matches the design logic)**. Only if these checks are clean, the chip is ready for fabrication.
 
 
-<img width="900" height="900" alt="Screenshot 2025-09-19 130359" src="https://github.com/user-attachments/assets/f872609e-0c3e-4bd2-bd60-a76483a1937d" />
+<img width="900" height="900" alt="Screenshot 2025-09-19 130359" src="DAY0/IMAGES/SOC.png" />
 
 
 
@@ -183,7 +183,7 @@ $ sudo make install
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" /> Installation check
 
-<img width="870" height="276" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_21" src="https://github.com/user-attachments/assets/da838c4d-3fce-4be9-bdf1-30948241dd4a" />
+<img width="870" height="276" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_21" src="DAY0/IMAGES/Yosys_png.png" />
 
 
 
@@ -198,13 +198,13 @@ $ sudo make install
 
 Steps to install iverilog 
 
-sudo apt-get update 
+$ sudo apt-get update 
 
-sudo apt-get install iverilog 
+$ sudo apt-get install iverilog 
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" />  Installation Check
 
-<img width="959" height="309" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_56" src="https://github.com/user-attachments/assets/1eabe5d6-a24e-4462-957f-49ea910475cd" />
+<img width="959" height="309" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_56" src="DAY0/IMAGES/Iverilog_png.png" />
 
 
 
@@ -214,16 +214,13 @@ sudo apt-get install iverilog
 
 Steps to install gtkwave 
 
-sudo apt-get update 
+$ sudo apt-get update 
 
-sudo apt install gtkwave 
+$ sudo apt install gtkwave 
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" /> Installation Check
 
-<img width="1198" height="663" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_29_34" src="https://github.com/user-attachments/assets/6b6b35ba-3143-4082-b67f-f35660d464f9" />
-
-
-
+<img width="1198" height="663" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_29_34" src="DAY0/IMAGES/GTKWAVE_png.png" />
 
 
 
@@ -238,22 +235,107 @@ sudo apt install gtkwave
 # ngspice 
 After downloading the tarball from https://sourceforge.net/projects/ngspice/files/ to a local 
 directory, unpack it using: 
+
 $ tar -zxvf /home/bhuvanesh/Downloads/ngspice-45.2.tar.gz 
+
 $ cd ngspice-45.2
+
 $ mkdir release 
+
 $ cd release 
+
 $ ../configure  --with-x --with-readline=yes --disable-debug 
+
 #if after run the make then throws an errors like not found automake and autoconf then you need to run below commands
+
 $ sudo apt update
+
 $ sudo apt install build-essential autoconf automake
+
 $ make 
+
 $ sudo make install
 
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" /> Installation Check
 
-<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="https://github.com/user-attachments/assets/b3ae8514-948b-4784-b902-eb0bfb203490" />
+<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="DAY0/IMAGES/ngspice_png.png" />
 
+
+
+
+
+
+
+
+
+# magic 
+
+
+<p>
+ 
+ Steps to install :
+
+$ sudo apt-get install m4 
+
+$   sudo apt-get install tcsh 
+
+$   sudo apt-get install csh 
+
+$   sudo apt-get install libx11-dev 
+
+$   sudo apt-get install tcl-dev tk-dev 
+
+$   sudo apt-get install libcairo2-dev 
+
+$   sudo apt-get install mesa-common-dev libglu1-mesa-dev 
+
+$   sudo apt-get install libncurses-dev 
+
+git clone https://github.com/RTimothyEdwards/magic 
+
+$ cd magic 
+
+$ ./configure 
+
+$ make 
+
+#If you are not in root directory then use the below command due to permission access.
+
+$ sudo make install
+
+#If you are in root directory then use the below command
+
+$ make install
+
+</p>
+
+
+<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="DAY0/IMAGES/magic_png.png" />
+
+
+
+
+
+
+# Acquired Knowledge from Week 0
+
+
+1. Understanding the Tapeout Flow
+
+   ----> Gained knowledge about how SOC will be integarted and what are the stages involved to reach tapeout.
+   
+   ----> ASIC design flow: Specificatio -> RTL -> verification -> synthesis -> floorplanning & placement -> routing -> signoff -> GDSII.
+
+2. Environment Setup
+
+   ----> Installing tools in Linux (Ubuntu).
+
+   ----> Setting up git repositories for code and layout.
+
+   ----> Learned basics of command-line tool usage.
+
+   ----> Learned when to use sudo command and if any error detected while installing tools then rectify .
 
 
 
