@@ -32,7 +32,7 @@ Welcome to VSD'S RISCV tapeout program.  Let's begin the adventure by exploring 
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/0fc94fea-b4ab-4ed1-aca0-eebd6ccb00f7" /> Task -2 : <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/5c0e1f14-e767-4697-990e-680e1e294748" /> Opensource Tools Installation
 
-Before start with tool installation, lets describe about opensource tools, why we used? and  
+Before start with tool installation, lets describe about opensource tools, why we used? and  different tools in VLSI.
 
 # <img width="40" height="40" alt="image" src="https://github.com/user-attachments/assets/7ee2fb21-a025-4f68-803f-b396021be9d7" /> About Opensource tools:
 
