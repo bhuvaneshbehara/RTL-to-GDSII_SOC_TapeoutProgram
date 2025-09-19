@@ -16,7 +16,7 @@ Welcome to VSD'S RISCV tapeout program.  Let's begin the adventure by exploring 
 ```
 
 
-<img width="900" height="900" alt="Screenshot 2025-09-19 130359" src="/IMAGES/SOC.png" />
+<img width="900" height="900" alt="Screenshot 2025-09-19 130359" src="./IMAGES/SOC.png" />
 
 
 
@@ -329,7 +329,7 @@ $ make install
 ```
 
 
-<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="./IMAGES/magic_png.png" />
+<img width="1031" height="427" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="./IMAGES/magic_png.png" />
 
 
 
@@ -339,7 +339,7 @@ $ make install
 
 # Summary of TASK-2
 
-```bash
+
  
 | Tool        | Purpose                | Status        |
 |:-----------:|:----------------------:|:------------: |
@@ -349,7 +349,6 @@ $ make install
 | ngspice     | Circuit Simulatio      | []Done        |
 | Magic       | Layout Design          | []Done        |
 
-```
 
 
 
