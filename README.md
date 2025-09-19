@@ -34,16 +34,20 @@ Welcome to my journey through the VSD-RISCV SOC program! Below are links to my d
 **VSD**, **IIT Gandhinagar**, **ChipFoundary** **Efabless**
 
 
+
+
+
+
 #  🙏✨ Special Thanks and Gratitude ✨🙏
 
   
 I extend my heartfelt gratitude to the visionary leaders and pioneers who made this **VSD RISC-V SoC Tapeout Program** possible:  
 
-- 👨‍💼 **Kunal Ghosh Sir** – CEO & Founder of [VSD](https://www.vlsisystemdesign.com/), for his exceptional leadership and constant encouragement.  
-- 👩‍💼 **Anagha Ghosh Madam** – Director & Co-Founder of [VSD](https://www.vlsisystemdesign.com/), for her invaluable guidance and support.  
-- 🎓 **Dr. Rajat Moona Sir** – Director of [IIT Gandhinagar](https://iitgn.ac.in/), for his academic vision and strong backing of open-source chip design initiatives.  
-- 🧑‍💼 **Samir Patel Sir** – Chief Strategy Officer (CSO) at [ChipFlow](https://www.chipflow.io/) (Chip Foundry ecosystem partner), for his strategic contributions to the program.  
-- 🧑‍🔬 **Mohammad Kassem Sir** – CTO & Co-Founder of [Efabless/ChipIgnite](https://efabless.com/), for his technical leadership and continuous efforts in advancing open-source silicon.  
+- 👨‍💼 **Kunal Ghosh Sir** – CEO & Founder of [VSD](https://www.vlsisystemdesign.com/).  
+- 👩‍💼 **Anagha Ghosh Madam** – Director & Co-Founder of [VSD](https://www.vlsisystemdesign.com/). 
+- 🎓 **Dr. Rajat Moona Sir** – Director of [IIT Gandhinagar](https://iitgn.ac.in/).  
+- 🧑‍💼 **Samir Patel Sir** – Chief Strategy Officer (CSO) at [ChipFlow](https://www.chipflow.io/).  
+- 🧑‍🔬 **Mohammad Kassem Sir** – CTO & Co-Founder of [Efabless/ChipIgnite](https://efabless.com/).  
 
 
 
