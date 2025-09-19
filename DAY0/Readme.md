@@ -34,11 +34,11 @@ Welcome to VSD'S RISCV tapeout program.  Let's begin the adventure by exploring 
 
 Before start with tool installation, lets describe about opensource tools, why we used? and  
 
-# About Opensource tools:
+# <img width="40" height="40" alt="image" src="https://github.com/user-attachments/assets/7ee2fb21-a025-4f68-803f-b396021be9d7" /> About Opensource tools:
 
   Open-source tools are software programs distributed with their source code, which is freely available for anyone to use, study, modify, and distribute under an open-source license.
  
-# <img width="40" height="40" alt="image" src="https://github.com/user-attachments/assets/7ee2fb21-a025-4f68-803f-b396021be9d7" /> Why are we used?
+#  Why are we used?
   
   Open-source VLSI tools are used for the following reasons:
   
