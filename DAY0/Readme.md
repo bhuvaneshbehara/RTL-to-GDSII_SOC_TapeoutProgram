@@ -153,7 +153,7 @@ Before start with tool installation, lets describe about opensource tools, why w
 
 # Yosys Installation
 
-''''bash
+```bash
 
 Steps to install yosys
 
@@ -180,12 +180,14 @@ $ git submodule update --init --recursive
 
 $ make  
 
-$ sudo make install 
+$ sudo make install
+
+```
 
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" /> Installation check
 
-<img width="870" height="276" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_21" src="/IMAGES/Yosys_png.png" />
+<img width="870" height="276" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_21" src="./IMAGES/Yosys_png.png" />
 
 
 
@@ -198,17 +200,19 @@ $ sudo make install
 
 # Iverilog Installation
 
-''''bash
+```bash
 
 Steps to install iverilog 
 
 $ sudo apt-get update 
 
-$ sudo apt-get install iverilog 
+$ sudo apt-get install iverilog
+
+```
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" />  Installation Check
 
-<img width="959" height="309" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_56" src="/IMAGES/Iverilog_png.png" />
+<img width="959" height="309" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_56" src="./IMAGES/Iverilog_png.png" />
 
 
 
@@ -216,17 +220,19 @@ $ sudo apt-get install iverilog
 
 # gtkwave Installation
 
-''''bash
+```bash
 
 Steps to install gtkwave 
 
 $ sudo apt-get update 
 
-$ sudo apt install gtkwave 
+$ sudo apt install gtkwave
+
+```
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" /> Installation Check
 
-<img width="1198" height="663" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_29_34" src="/IMAGES/GTKWAVE_png.png" />
+<img width="1198" height="663" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_29_34" src="./IMAGES/GTKWAVE_png.png" />
 
 
 
@@ -240,7 +246,7 @@ $ sudo apt install gtkwave
 
 # ngspice Installation
 
-''''bash
+```bash
 
 After downloading the tarball from https://sourceforge.net/projects/ngspice/files/ to a local 
 directory, unpack it using: 
@@ -265,10 +271,12 @@ $ make
 
 $ sudo make install
 
+```
+
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" /> Installation Check
 
-<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="/IMAGES/ngspice_png.png" />
+<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="./IMAGES/ngspice_png.png" />
 
 
 
@@ -280,8 +288,7 @@ $ sudo make install
 
 # magic 
 
-
-''''bash
+```bash
  
  Steps to install :
 
@@ -317,10 +324,10 @@ $ sudo make install
 
 $ make install
 
+```
 
 
-
-<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="/IMAGES/magic_png.png" />
+<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="./IMAGES/magic_png.png" />
 
 
 
