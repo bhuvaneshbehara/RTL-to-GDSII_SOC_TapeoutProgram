@@ -13,7 +13,7 @@ Welcome to VSD'S RISCV tapeout program.  Let's begin the adventure by exploring 
    After that comes **SoC Integration**, where all the different pieces (processor, memories, peripherals, and GPIOs) are combined into a single chip design. Then the flow moves into the **physical design stage (RTL to GDS)**, which is about arranging the circuit physically on silicon. This includes floorplanning, placement of cells, clock tree synthesis, and routing. The output is a **GDSII file**, which is the final chip layout. Before sending the design to the foundry for manufacturing, it goes through **signoff checks** such as **DRC (to ensure layout follows manufacturing rules)** and **LVS (to make sure the layout matches the design logic)**. Only if these checks are clean, the chip is ready for fabrication.
 
 
-<img width="900" height="900" alt="Screenshot 2025-09-19 130359" src="DAY0/IMAGES/SOC.png" />
+<img width="900" height="900" alt="Screenshot 2025-09-19 130359" src="/IMAGES/SOC.png" />
 
 
 
@@ -151,7 +151,9 @@ Before start with tool installation, lets describe about opensource tools, why w
 
 
 
-# Yosys 
+# Yosys Installation
+
+''''bash
 
 Steps to install yosys
 
@@ -183,7 +185,7 @@ $ sudo make install
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" /> Installation check
 
-<img width="870" height="276" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_21" src="DAY0/IMAGES/Yosys_png.png" />
+<img width="870" height="276" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_21" src="/IMAGES/Yosys_png.png" />
 
 
 
@@ -194,7 +196,9 @@ $ sudo make install
 
 
 
-# Iverilog 
+# Iverilog Installation
+
+''''bash
 
 Steps to install iverilog 
 
@@ -204,13 +208,15 @@ $ sudo apt-get install iverilog
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" />  Installation Check
 
-<img width="959" height="309" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_56" src="DAY0/IMAGES/Iverilog_png.png" />
+<img width="959" height="309" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_56" src="/IMAGES/Iverilog_png.png" />
 
 
 
 
 
-# gtkwave 
+# gtkwave Installation
+
+''''bash
 
 Steps to install gtkwave 
 
@@ -220,7 +226,7 @@ $ sudo apt install gtkwave
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" /> Installation Check
 
-<img width="1198" height="663" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_29_34" src="DAY0/IMAGES/GTKWAVE_png.png" />
+<img width="1198" height="663" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_29_34" src="/IMAGES/GTKWAVE_png.png" />
 
 
 
@@ -232,7 +238,10 @@ $ sudo apt install gtkwave
 
 
 
-# ngspice 
+# ngspice Installation
+
+''''bash
+
 After downloading the tarball from https://sourceforge.net/projects/ngspice/files/ to a local 
 directory, unpack it using: 
 
@@ -259,7 +268,7 @@ $ sudo make install
 
 # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" /> Installation Check
 
-<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="DAY0/IMAGES/ngspice_png.png" />
+<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="/IMAGES/ngspice_png.png" />
 
 
 
@@ -272,7 +281,7 @@ $ sudo make install
 # magic 
 
 
-<p>
+''''bash
  
  Steps to install :
 
@@ -308,10 +317,10 @@ $ sudo make install
 
 $ make install
 
-</p>
 
 
-<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="DAY0/IMAGES/magic_png.png" />
+
+<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="/IMAGES/magic_png.png" />
 
 
 
@@ -335,7 +344,7 @@ $ make install
 
    ----> Learned basics of command-line tool usage.
 
-   ----> Learned when to use sudo command and if any error detected while installing tools then rectify .
+   ----> Learned when to use sudo command and if any error detected while installing tools then rectify.
 
 
 
