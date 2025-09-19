@@ -46,7 +46,7 @@ I extend my heartfelt gratitude to the visionary leaders and pioneers who made t
 - 👨‍💼 **Kunal Ghosh Sir** – CEO & Founder of [VSD](https://www.vlsisystemdesign.com/).  
 - 👩‍💼 **Anagha Ghosh Madam** – Director & Co-Founder of [VSD](https://www.vlsisystemdesign.com/). 
 - 🎓 **Dr. Rajat Moona Sir** – Director of [IIT Gandhinagar](https://iitgn.ac.in/).  
-- 🧑‍💼 **Samir Patel Sir** – Chief Strategy Officer (CSO) at [ChipFlow](https://www.chipflow.io/).  
+- 🧑‍💼 **Samir Patel Sir** – Chief Strategy Officer (CSO) at [ChipFoundary](https:/efabless.com/).  
 - 🧑‍🔬 **Mohammad Kassem Sir** – CTO & Co-Founder of [Efabless/ChipIgnite](https://efabless.com/).  
 
 
