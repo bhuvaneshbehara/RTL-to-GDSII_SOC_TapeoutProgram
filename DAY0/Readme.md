@@ -1,13 +1,11 @@
 
-# RISC-V Tapeout Program
+# <img width="70" height="70" alt="image" src="https://github.com/user-attachments/assets/143fdf2a-2c67-4cea-9092-b6436290abff" />  RISC-V Tapeout Program
 
 Welcome to VSD'S RISCV tapeout program.  Let's begin the adventure by exploring Day0 topic such as Tool Installation.
 
- # <img width="40" height="40" alt="image" src="https://github.com/user-attachments/assets/0fc94fea-b4ab-4ed1-aca0-eebd6ccb00f7" /> Task-1 
+ # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/0fc94fea-b4ab-4ed1-aca0-eebd6ccb00f7" /> Task-1 
 
-# <img width="40" height="40" alt="image" src="https://github.com/user-attachments/assets/4056685c-3bb4-4320-9b9b-65ac505e33a1" /> Summary of the video
-
-
+# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/4056685c-3bb4-4320-9b9b-65ac505e33a1" /> Summary of the video
 
 
 
@@ -29,9 +27,11 @@ Welcome to VSD'S RISCV tapeout program.  Let's begin the adventure by exploring 
 
 
 
-# <img width="40" height="40" alt="image" src="https://github.com/user-attachments/assets/0fc94fea-b4ab-4ed1-aca0-eebd6ccb00f7" /> Task -2 
 
-# <img width="40" height="40" alt="image" src="https://github.com/user-attachments/assets/5c0e1f14-e767-4697-990e-680e1e294748" /> Opensource Tools Installation
+
+# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/0fc94fea-b4ab-4ed1-aca0-eebd6ccb00f7" /> Task -2 
+
+# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/5c0e1f14-e767-4697-990e-680e1e294748" /> Opensource Tools Installation
 
 Before start with tool installation, lets describe about opensource tools, why we used? and  
 
@@ -58,7 +58,7 @@ Before start with tool installation, lets describe about opensource tools, why w
  5. Community Collaboration:
               Just like Linux or RISC-V, an ecosystem builds around open-source EDA tools. Shared development reduces duplication of effort and increases quality.
 
-# <img width="40" height="40" alt="image" src="https://github.com/user-attachments/assets/5c0e1f14-e767-4697-990e-680e1e294748" /> Different Opensource Tools available on VLSI and their purpose:
+# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/5c0e1f14-e767-4697-990e-680e1e294748" /> Different Opensource Tools available on VLSI and their purpose:
 
 ## Front-End (RTL → Netlist):
 
@@ -154,24 +154,37 @@ Before start with tool installation, lets describe about opensource tools, why w
 
 # Yosys 
 
+Steps to install yosys
+
 $ sudo apt-get update 
+
 $ git clone https://github.com/YosysHQ/yosys.git
+
 $ sudo apt install git # if git is not installed
+
 $ cd yosys 
+
 $ sudo apt install make (If make is not installed please install it)  
+
 $ sudo apt-get install build-essential clang bison flex \ 
 libreadline-dev gawk tcl-dev libffi-dev git \ 
 graphviz xdot pkg-config python3 libboost-system-dev \ 
 libboost-python-dev libboost-filesystem-dev zlib1g-dev 
+
 $ make config-gcc 
+
 #Yosys build depends on a Git submodule called abc, which hasn't been initialized yet. You need to run the following command before running make
+
 $ git submodule update --init --recursive
+
 $ make  
+
 $ sudo make install 
 
 
 # Installation check
 
+<img width="870" height="276" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_21" src="https://github.com/user-attachments/assets/da838c4d-3fce-4be9-bdf1-30948241dd4a" />
 
 
 
@@ -185,10 +198,15 @@ $ sudo make install
 # Iverilog 
 
 Steps to install iverilog 
+
 sudo apt-get update 
+
 sudo apt-get install iverilog 
 
 # Installation Check
+
+<img width="959" height="309" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_56" src="https://github.com/user-attachments/assets/1eabe5d6-a24e-4462-957f-49ea910475cd" />
+
 
 
 
@@ -196,11 +214,14 @@ sudo apt-get install iverilog
 # gtkwave 
 
 Steps to install gtkwave 
+
 sudo apt-get update 
+
 sudo apt install gtkwave 
 
 # Installation Check
 
+<img width="1198" height="663" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_29_34" src="https://github.com/user-attachments/assets/6b6b35ba-3143-4082-b67f-f35660d464f9" />
 
 
 
@@ -232,6 +253,7 @@ $ sudo make install
 
 # Installation Check
 
+<img width="1280" height="800" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="https://github.com/user-attachments/assets/b36469a0-8f7f-40a4-91b5-0bb033b161ba" />
 
 
 
