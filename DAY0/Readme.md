@@ -3,13 +3,11 @@
 
 Welcome to VSD'S RISCV tapeout program.  Let's begin the adventure by exploring Day0 topic such as Tool Installation.
 
- # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/0fc94fea-b4ab-4ed1-aca0-eebd6ccb00f7" /> Task-1 
+ # <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/0fc94fea-b4ab-4ed1-aca0-eebd6ccb00f7" /> Task-1 : <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/4056685c-3bb4-4320-9b9b-65ac505e33a1" /> Summary of the video
+   
+   The Video is about SOC chip designed step by step. First, in the design starts with a **specification written in C language**. This is like a rough model of how the chip should behave, and a testbench in C is used to check if the idea works correctly. Next, the design is described in **Verilog (RTL)**, which is a hardware description language. At this stage, different blocks like the processor, peripherals, and analog parts are written in RTL and tested. Once the RTL is ready, it is converted into a **gate-level netlist** through synthesis, which means the design is now expressed in terms of logic gates.
 
-# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/4056685c-3bb4-4320-9b9b-65ac505e33a1" /> Summary of the video
-
-
-
-
+   After that comes **SoC Integration**, where all the different pieces (processor, memories, peripherals, and GPIOs) are combined into a single chip design. Then the flow moves into the **physical design stage (RTL to GDS)**, which is about arranging the circuit physically on silicon. This includes floorplanning, placement of cells, clock tree synthesis, and routing. The output is a **GDSII file**, which is the final chip layout. Before sending the design to the foundry for manufacturing, it goes through **signoff checks** such as **DRC (to ensure layout follows manufacturing rules)** and **LVS (to make sure the layout matches the design logic)**. Only if these checks are clean, the chip is ready for fabrication.
 
 
 
@@ -28,10 +26,7 @@ Welcome to VSD'S RISCV tapeout program.  Let's begin the adventure by exploring 
 
 
 
-
-# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/0fc94fea-b4ab-4ed1-aca0-eebd6ccb00f7" /> Task -2 
-
-# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/5c0e1f14-e767-4697-990e-680e1e294748" /> Opensource Tools Installation
+# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/0fc94fea-b4ab-4ed1-aca0-eebd6ccb00f7" /> Task -2 : <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/5c0e1f14-e767-4697-990e-680e1e294748" /> Opensource Tools Installation
 
 Before start with tool installation, lets describe about opensource tools, why we used? and  
 
@@ -182,7 +177,7 @@ $ make
 $ sudo make install 
 
 
-# Installation check
+# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" /> Installation check
 
 <img width="870" height="276" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_21" src="https://github.com/user-attachments/assets/da838c4d-3fce-4be9-bdf1-30948241dd4a" />
 
@@ -203,7 +198,7 @@ sudo apt-get update
 
 sudo apt-get install iverilog 
 
-# Installation Check
+# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" />  Installation Check
 
 <img width="959" height="309" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_27_56" src="https://github.com/user-attachments/assets/1eabe5d6-a24e-4462-957f-49ea910475cd" />
 
@@ -219,7 +214,7 @@ sudo apt-get update
 
 sudo apt install gtkwave 
 
-# Installation Check
+# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" /> Installation Check
 
 <img width="1198" height="663" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_29_34" src="https://github.com/user-attachments/assets/6b6b35ba-3143-4082-b67f-f35660d464f9" />
 
@@ -251,9 +246,10 @@ $ make
 $ sudo make install
 
 
-# Installation Check
+# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/c7ded365-e068-4a3a-8d0c-43b74e055e8e" /> Installation Check
 
-<img width="1280" height="800" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="https://github.com/user-attachments/assets/b36469a0-8f7f-40a4-91b5-0bb033b161ba" />
+<img width="1031" height="327" alt="VirtualBox_Opensource_eda_ubuntu_19_09_2025_16_43_37" src="https://github.com/user-attachments/assets/b3ae8514-948b-4784-b902-eb0bfb203490" />
+
 
 
 
