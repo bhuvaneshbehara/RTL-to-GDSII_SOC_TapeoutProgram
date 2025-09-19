@@ -12,7 +12,7 @@ Welcome to my journey through the VSD-RISCV SOC program! Below are links to my d
 
 
 
-# <img width="50" height="40" alt="image" src="https://github.com/user-attachments/assets/b4d1709a-4e0b-4380-bad9-14200147e049" />Program Motto
+# <img width="50" height="40" alt="image" src="https://github.com/user-attachments/assets/b4d1709a-4e0b-4380-bad9-14200147e049" />  Program Motto
 
 ```bash
 
