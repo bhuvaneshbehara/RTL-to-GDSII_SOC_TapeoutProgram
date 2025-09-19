@@ -7,27 +7,46 @@ Welcome to my journey through the VSD-RISCV SOC program! Below are links to my d
 
 | Day   | Topics Covered                                                                          | Status       |
 |-------|-----------------------------------------------------------------------------------------|--------------|
-| Day 0 | [Opensource Tools Installation](#)                                                      | ✅ Done      |
+| Day 0 | [Opensource Tools Installation](/DAY0.md)                                                      | ✅ Done      |
 
 
 
 
-# Program Motto
+# <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/e2185a4d-11b1-4107-9b10-ebc6919a55da" /> Program Motto
 
 ```bash
 
----> Using open-source tools and open hardware (RISC-V), anybody may design and tape out a SoC.
 
----> Open-Source Driven – Use of free and open-source EDA tools (Yosys, OpenSTA, Magic, Ngspice, OpenLane, etc.) so that chip design is accessible to everyone.
+ ---> Driven by Open-Source Chip design is made available to anyone with the use of free and open-source EDA tools (Yosys, OpenSTA, Magic, Ngspice, OpenLane, etc.).
 
----> Hands-on Learning – Provide a structured, step-by-step flow from RTL to GDSII where learners actually build and tapeout a chip.
+ ---> Hands-on Learning : Offer a methodical, sequential progression from RTL to GDSII in which students actually build and design a chip.
 
----> RISC-V Based – Leverage the open RISC-V ISA as a base processor core for SoC design, removing licensing barriers.
+ ---> Tapeout Experience: Not just theory, but a real silicon tapeout experience (getting from Verilog → GDSII → fabrication).
 
----> Tapeout Experience – Not just theory, but a real silicon tapeout experience (getting from Verilog → GDSII → fabrication).
+ ---> Community & Collaboration: Create a global network of experts, students, and VLSI enthusiasts who share knowledge and work together.
 
----> Community & Collaboration – Build a global community of VLSI enthusiasts, students, and professionals who learn and contribute together.
+ ---> Connecting Education and Industry: Using open-source technologies, give students industry-level flow expertise to make them engineers who are ready for tapeout.
 
----> Bridging Academia and Industry – Equip learners with industry-grade flow knowledge using open-source tools, making them tapeout-ready engineers.
+```
+
+# Collaboration and Contributors in the Program
+
+VSD(#), IIT Gandhinagar(#), ChipFoundary(#) Efabless(#)
+
+
+#  🙏✨ Special Thanks and Gratitude ✨🙏
+
+
+ A very special thanks to CEO and Founder of VSD: Kunal Gosh Sir(#), Director and CO-Founder of VSD: Anagha Gosh madam(#) IIT Gandhinagar Director: Dr. Rajat Moona Sir(#) , Chief Strategy Officer(CSO) at Chip Foundary : Samir Patel Sir(#), CTO and CO-Founder of Chip Foundary: Mohhamad kassem sir(#) 
+
+
+
+
+
+
+
+
+
+
 
 
