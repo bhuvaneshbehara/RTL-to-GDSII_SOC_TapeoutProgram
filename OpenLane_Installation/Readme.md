@@ -12,7 +12,7 @@ OpenLane is an open-source automated RTL-to-GDSII flow for VLSI design, and it i
 # Steps to install Docker and OpenLane:
  
 
-# Installing the Docker:
+# Step-1: Setup the Docker:
 
 ```bash
 
@@ -31,7 +31,7 @@ sudo chmod a+r /etc/apt/keyrings/docker.asc
 ```
 
 
-# Adding Docker's repository
+# step-1.1 :Adding Docker's repository
 
 ```bash
 
@@ -43,7 +43,7 @@ sudo apt-get update
 
 ```
 
-# Installing Docker
+# step-1.2: Installing Docker
 
 ```
 
@@ -51,7 +51,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 ```
 
-# Verification
+# step-1.3: Verification
 
 ```
 
@@ -78,10 +78,9 @@ sudo usermod -aG docker $USER
 
 ```
 
-# Steps to install OpenLane
+# Step-2: Installing the OpenLane
 
-
-# Before installing openlane, the following tool version should be present
+# step-2.1: Checking tool version for installing openlane
 
 ```
 git --version
@@ -93,7 +92,7 @@ python3 -m venv -h
 
 ```
 
-# Update the packages
+# step-2.2: Update the packages
 
 ```
 sudo apt-get update
@@ -104,7 +103,7 @@ sudo apt install -y build-essential python3 python3-venv python3-pip python3-tk 
 ```
 
 
-# Building the Openlane tool
+# step-2.3: Building the Openlane tool
 ```
 
 git clone https://github.com/The-OpenROAD-Project/OpenLane 
