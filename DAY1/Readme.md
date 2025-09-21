@@ -87,7 +87,7 @@ sudo apt install gtkwave
 ```
 
 
-## 4. LAB: How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example 
+## 4. LAB:How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example 
 
 Let’s simulate a simple **2-to-1 multiplexer** using iverilog and gtkwave.
 
