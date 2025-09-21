@@ -2,10 +2,9 @@
 
 Welcome to Day 1 of the RTL-to-GDSII SoC Tapeout Program! 🎉
 
-```
-
 Today, your journey into VLSI design begins with a deep dive into simulation and synthesis using cutting-edge open-source tools.
 
+```
 🔹 You’ll discover what an open-source simulator is and get hands-on with Icarus Verilog (iverilog) to simulate Verilog RTL designs.
 
 🔹 You’ll learn the fundamentals of logic synthesis, understanding how RTL transforms into gate-level logic.
@@ -22,12 +21,13 @@ This is not just theory—it’s about real, practical experience. By the end of
 
 1. [What is a Simulator, Design, and Testbench?](#1-what-is-a-simulator-design-and-testbench)
 2. [Introduction to iverilog based flow](#2-Introduction-to-iverilog-based-flow)
-3. [Setup the environment](#3-setup-the-environment)
+3. [Install the Required Tools ](#3-Install-the-Required-Tools)
 4. [How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example](#4-How-to-use-GTKWave-and-verilog-with-a-2-to-1-Multiplexer-example)
-5. [Verilog Code Analysis](#5-verilog-code-analysis)
-6. [Introduction to Yosys & Gate Libraries](#5-introduction-to-yosys--gate-libraries)
-7. [Synthesis Lab with Yosys](#6-synthesis-lab-with-yosys)
-8. [Summary](#7-summary)
+5. [Verilog and test bench code analysis of the 2-to-1 Multiplexer](#5-Verilog-and-test-bench-code-analysis-of-the-2-to-1-Multiplexer)
+6. [Overview of Yosys and Setup Guide](#6-Overview-of-Yosys-and-Setup-Guide)
+7. [Introduction to Synthesis and .lib](#7-Introduction-to-Synthesis-and-.-lib)
+8. [Synthesis Lab with Yosys](#8-synthesis-lab-with-yosys)
+9. [Summary](#7-summary)
 
 ---
 
@@ -77,19 +77,11 @@ Here’s the typical simulation flow image:
 
 
 
-## 3. Setup the environment 
+## 3. Install the Required Tools 
+ 
+If installed already then no need this
 
-
-###  Step 1: Clone the Repository
-
-```shell
-git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
-cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
 ```
-
-###  Step 2: Install Required Tools
-
-```shell
 sudo apt install iverilog
 sudo apt install gtkwave
 ```
@@ -97,32 +89,41 @@ sudo apt install gtkwave
 
 # 4. How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example 
 
-Let’s simulate a simple **2-to-1 multiplexer** using iverilog!
+Let’s simulate a simple **2-to-1 multiplexer** using iverilog and gtkwave.
 
 
-###  Step 1: Simulate the Design
+###  Step 1: Clone the Repository
+
+```
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+
+cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
+
+```
+
+###  Step 2: Simulate the Design
 
 Compile the design and testbench:
 
-```shell
+```
 iverilog good_mux.v tb_good_mux.v
 ```
 
 
 Run the simulation:
 
-```shell
+```
 ./a.out
 ```
 
 View the waveform:
 
-```shell
+```
 gtkwave tb_good_mux.vcd
 ```
 
 
-## 4. Verilog Code Analysis
+## 5. Verilog and test bench code analysis of the 2-to-1 Multiplexer
 
 **The code for the multiplexer (`good_mux.v`):**
 
@@ -143,6 +144,194 @@ endmodule
 - **Inputs:** `i0`, `i1` (data), `sel` (select line)
 - **Output:** `y` (registered output)
 - **Logic:** If `sel` is 1, `y` gets `i1`; if `sel` is 0, `y` gets `i0`.
+
+
+```Verilog with testbench
+`timescale 1ns / 1ps
+module tb_good_mux;
+	// Inputs
+	reg i0,i1,sel;
+	// Outputs
+	wire y;
+
+        // Instantiate the Unit Under Test (UUT)
+	good_mux uut (
+		.sel(sel),
+		.i0(i0),
+		.i1(i1),
+		.y(y)
+	);
+
+	initial begin
+	$dumpfile("tb_good_mux.vcd");
+	$dumpvars(0,tb_good_mux);
+	// Initialize Inputs
+	sel = 0;
+	i0 = 0;
+	i1 = 0;
+	#300 $finish;
+	end
+
+always #75 sel = ~sel;
+always #10 i0 = ~i0;
+always #55 i1 = ~i1;
+endmodule
+```
+
+## **How It Works**
+
+- At t=0, all inputs (sel, i0, i1) = 0.
+
+- Signals start toggling at their specified delays.
+
+    * i0 → fastest changing (every 10 ns).
+
+    * i1 → medium speed (every 55 ns).
+
+    * sel → slowest (every 75 ns).
+
+- The DUT (good_mux) receives these inputs and produces output y accordingly.
+
+- All changes are recorded in tb_good_mux.vcd, so you can open it in GTKWave and watch the waveforms.
+
+- At t=300 ns, simulation ends.
+
+Here’s the typical Verilog and test bench code of 2-to-1 Multiplexer image:
+
+
+
+
+## 6. Overview of Yosys and Setup Guide 
+
+  Before introducing yosys tool, lets know about synthesizer.
+
+### What is synthesizer?
+
+  **Synthesizer** is a tool which converts RTL to gate-level netlist. Here, we are using yosys as a synthesizer tool.
+
+###  What is Yosys?
+
+**Yosys** is a powerful open-source synthesis tool for digital hardware. It takes your Verilog code and converts it into a gate-level netlist—a hardware blueprint.
+
+#### Yosys Features
+```
+--> Open-source logic synthesis tool for Verilog designs.
+
+--> Supports RTL synthesis (Verilog → gate-level netlist).
+
+--> Provides technology mapping to standard cell libraries.
+
+--> Performs optimization (area, timing, redundancy removal).
+
+--> Supports formal verification (equivalence checking).
+
+--> Can generate netlists in formats like BLIF, EDIF, JSON, etc.
+
+--> Integrates with ABC tool for logic optimization and mapping.
+
+--> Extensible with custom passes and plugins.
+
+--> Widely used in OpenLANE and RTL-to-GDSII flows.
+
+```
+
+## Yosys tool setup
+
+```
+Inputs:
+
+Verilog Design file → read_verilog.
+
+Library file (.lib) (defines standard cells) → read_liberty.
+
+Yosys processes them to perform logic synthesis.
+
+Output: Netlist file → written using write_verilog.
+
+In short: Yosys takes design + library, runs synthesis, and generates a netlist.
+
+```
+
+Here’s the typical yosys setup image:
+
+
+
+## Verify the Synthesis 
+
+Note: Primary inputs/outputs don’t change → the same testbench can be reused.
+
+```
+Inputs: Netlist (from synthesis) + Testbench.
+
+Both are given to iverilog (the simulator).
+
+Output is a VCD file that shows waveforms.
+
+Open in GTKWave to compare behavior.
+
+Key point: If the synthesized netlist produces the same output as the RTL simulation → synthesis is correct.
+
+
+```
+
+Here’s the typical verifying synthesis image:
+
+
+
+
+
+
+
+## 7. Introduction to Synthesis and .lib
+
+First, look at synthesis and then dive into gate libraries
+ 
+### What is synthesis? 
+
+```
+ **synthesis** means that converting from one form of level to another form of level. 
+
+```
+
+ so, lets dive into what is logic synthesis?
+
+ ## What is logic synthesis?
+
+ **Logic synthesis** means that converting from RTLcode into optimized gate-level netlist w.r.t Performace, Power and Timing (PPA).
+
+## What is .lib, and what are its contents?
+
+## What is .lib?
+
+ **.lib file** is a short of liberty timing file. It is an ASCII representation of timing, power parameter associated with cells inside the std cell library of a particular technology node.
+
+## Contents of .lib
+
+```
+Cell definitions → list of all standard cells (e.g., NAND2, NOR2, INV, DFF).
+
+Pin information → input/output pins, direction, function.
+
+Timing data → delay, setup, hold times, clock-to-Q, etc.
+
+Power data → dynamic and leakage power.
+
+Constraints → drive strength, fanout limits, load capacitance.
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
