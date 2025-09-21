@@ -22,10 +22,10 @@ This is not just theory—it’s about real, practical experience. By the end of
 1. [What is a Simulator, Design, and Testbench?](#1-what-is-a-simulator-design-and-testbench)
 2. [Introduction to iverilog based flow](#2-Introduction-to-iverilog-based-flow)
 3. [Install the Required Tools ](#3-Install-the-Required-Tools)
-4. [How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example](#4-How-to-use-GTKWave-and-verilog-with-a-2-to-1-Multiplexer-example)
+4. [LAB: How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example](#4-LAB:-How-to-use-GTKWave-and-verilog-with-a-2-to-1-Multiplexer-example)
 5. [Verilog and test bench code analysis of the 2-to-1 Multiplexer](#5-Verilog-and-test-bench-code-analysis-of-the-2-to-1-Multiplexer)
 6. [Overview of Yosys and Setup Guide](#6-Overview-of-Yosys-and-Setup-Guide)
-7. [Introduction to Synthesis and .lib](#7-Introduction-to-Synthesis-and-.-lib)
+7. [Introduction to Synthesis and gate libraries](#7-Introduction-to-Synthesis-and-gate-libraries)
 8. [Synthesis Lab with Yosys](#8-synthesis-lab-with-yosys)
 9. [Summary](#7-summary)
 
@@ -57,7 +57,7 @@ A design in Verilog is the hardware description (RTL code) that specifies how a 
 
 A test bench is a simulation-only environment written in a Hardware Verification Language (HVL) like Verilog or SystemVerilog that applies input stimuli to a Design Under Test (DUT) and checks its output responses to verify the design's functional correctness.
 
-<div align="center">  <img width="730" height="250" alt="image" src="https://github.com/user-attachments/assets/bbd919e1-5683-4807-84c6-751cdfe8cefd" /> </div>
+<div align="center">  <img width="530" height="530" alt="image" src="https://github.com/user-attachments/assets/bbd919e1-5683-4807-84c6-751cdfe8cefd" /> </div>
 
 
 ## 2. Introduction to iverilog based flow
@@ -73,13 +73,13 @@ Here is an explanation of the iverilog-based simulation flow
 Here’s the typical simulation flow image:
 
 
-<div align="center"> <img width="730" height="730" alt="Iverilog simulation flow" src="https://github.com/user-attachments/assets/4106699f-ab7c-41e3-8310-2e40b965e325" /> </div>
+<div align="center"> <img width="530" height="530" alt="Iverilog simulation flow" src="https://github.com/user-attachments/assets/4106699f-ab7c-41e3-8310-2e40b965e325" /> </div>
 
 
 
 ## 3. Install the Required Tools 
  
-If installed already then no need this
+If installed already then ignore this
 
 ```
 sudo apt install iverilog
@@ -87,7 +87,7 @@ sudo apt install gtkwave
 ```
 
 
-# 4. How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example 
+## 4. LAB: How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example 
 
 Let’s simulate a simple **2-to-1 multiplexer** using iverilog and gtkwave.
 
@@ -121,6 +121,9 @@ View the waveform:
 ```
 gtkwave tb_good_mux.vcd
 ```
+
+<div align="center"> <img width="500" height="500" alt="out" src="https://github.com/user-attachments/assets/52283d57-7ead-42f3-9557-7cc7bdb0bf06" /> </div>
+
 
 
 ## 5. Verilog and test bench code analysis of the 2-to-1 Multiplexer
@@ -198,6 +201,7 @@ endmodule
 
 Here’s the typical Verilog and test bench code of 2-to-1 Multiplexer image:
 
+<div align="center"> <img width="500" height="500" alt="MUX and tb" src="https://github.com/user-attachments/assets/1ed69a51-6dc3-48c0-91e8-3b06f2d94640" /> </div>
 
 
 
@@ -213,7 +217,7 @@ Here’s the typical Verilog and test bench code of 2-to-1 Multiplexer image:
 
 **Yosys** is a powerful open-source synthesis tool for digital hardware. It takes your Verilog code and converts it into a gate-level netlist—a hardware blueprint.
 
-#### Yosys Features
+#### **Yosys** Features
 ```
 --> Open-source logic synthesis tool for Verilog designs.
 
@@ -235,7 +239,7 @@ Here’s the typical Verilog and test bench code of 2-to-1 Multiplexer image:
 
 ```
 
-## Yosys tool setup
+## **Yosys** tool setup
 
 ```
 Inputs:
@@ -254,9 +258,10 @@ In short: Yosys takes design + library, runs synthesis, and generates a netlist.
 
 Here’s the typical yosys setup image:
 
+<div align="center"> <img width="500" height="500" alt="Yosys image" src="https://github.com/user-attachments/assets/828c1edb-67db-4633-a412-c20c5da9e814" /> </div>
 
 
-## Verify the Synthesis 
+## How to verify the Synthesis 
 
 Note: Primary inputs/outputs don’t change → the same testbench can be reused.
 
@@ -276,22 +281,21 @@ Key point: If the synthesized netlist produces the same output as the RTL simula
 
 Here’s the typical verifying synthesis image:
 
+<div align="center"> <img width="500" height="500" alt="verify synthesis" src="https://github.com/user-attachments/assets/b2e2bd73-a4b1-470e-ae6b-fc7aa917881f" /> </div>
 
 
 
 
 
 
-## 7. Introduction to Synthesis and .lib
+## 7. Introduction to Synthesis and gate libraries
 
 First, look at synthesis and then dive into gate libraries
  
 ### What is synthesis? 
 
-```
  **synthesis** means that converting from one form of level to another form of level. 
 
-```
 
  so, lets dive into what is logic synthesis?
 
@@ -299,30 +303,131 @@ First, look at synthesis and then dive into gate libraries
 
  **Logic synthesis** means that converting from RTLcode into optimized gate-level netlist w.r.t Performace, Power and Timing (PPA).
 
-## What is .lib, and what are its contents?
+## Gate libraries
 
 ## What is .lib?
 
  **.lib file** is a short of liberty timing file. It is an ASCII representation of timing, power parameter associated with cells inside the std cell library of a particular technology node.
 
-## Contents of .lib
+## Why Do Libraries Have Different Gate "Flavors"?
+
+  Libraries have different **gate “flavors”** because a single logic gate (like NAND, NOR, INV) can be implemented in **multiple variants** to optimize for **speed, area, or power** depending on design needs.
+
+Here’s why:
+
+---
+
+### 🔹 1. **Drive Strength Variants**
+
+* Same gate is available with different **drive strengths** (e.g., INV\_X1, INV\_X2, INV\_X4).
+* Higher drive strength = stronger transistor sizes → faster but larger area and higher power.
+* Lower drive strength = smaller, slower but saves area and power.
+
+---
+
+### 🔹 2. **Threshold Voltage (Vt) Variants**
+
+* **HVT (High Vt):** Low leakage, slower → good for low-power designs.
+* **SVT (Standard Vt):** Balanced performance and leakage.
+* **LVT (Low Vt):** Fast, but higher leakage → used in speed-critical paths.
+
+---
+
+### 🔹 3. **Functional Variants**
+
+* A library may include **different logic implementations** (like AOI, OAI, MUX, complex gates).
+* Using a more complex gate instead of multiple simple gates reduces delay and area.
+
+---
+
+### 🔹 4. **Special Purpose Variants**
+
+* Some gates optimized for **low-power**, **low-noise**, or **high-density**.
+* Multi-bit flip-flops, clock-gating cells, isolation cells, etc.
+
+---
+
+
+## 8. Synthesis Lab with Yosys
+
+Let’s synthesize the `good_mux` design using Yosys!
+
+
+###  Yosys Flow: A Step-by-Step Guide
+
+1. **Start Yosys**
+
+   ```
+    yosys
+
+    ```
+
+3. **Read the liberty library**
+
+   ```
+   
+    read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+    ```
+
+5. **Read the Verilog code**
+    ```
+
+    read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/good_mux.v
+
+    ```
+
+7. **Synthesize the design**
+    ```
+    synth -top good_mux
+
+    ```
+
+8. **Technology mapping**
+    ```
+
+    abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+    ```
+   <div align="center"> <img width="660" height="206" alt="abc" src="https://github.com/user-attachments/assets/7710c08f-e5e7-417a-8f13-789b78f25678" /> </div>
+
+	
+
+9. **Visualize the gate-level netlist**
+
+    ```
+
+    show
+
+    ```
+
+<div align="center"> <img width="600" height="600" alt="GLN" src="https://github.com/user-attachments/assets/cd2496e7-ca74-4d80-bbf6-ace8581f91d9" /> </div>
+
+10. **Generating the Finalized Gate-Level Netlist**
 
 ```
-Cell definitions → list of all standard cells (e.g., NAND2, NOR2, INV, DFF).
-
-Pin information → input/output pins, direction, function.
-
-Timing data → delay, setup, hold times, clock-to-Q, etc.
-
-Power data → dynamic and leakage power.
-
-Constraints → drive strength, fanout limits, load capacitance.
+write_verilog -noattr good_mux_netlist.v
 
 ```
+<div align="center"> <img width="500" height="500" alt="netlist" src="https://github.com/user-attachments/assets/3664b79f-93a0-42ce-9923-2ec0a5883225" /> </div>
 
 
 
+## 9. Summary
 
+Completing Day 1 of your journey toward mastering the RTL-to-GDSII flow! 🎉
+
+This is what you learned today:
+
+* Understood the importance of simulators, designs, and testbenches in digital design verification.
+
+* Ran your first Verilog simulation with iverilog and visualized real signal activity using GTKWave.
+
+* Explored and analyzed a 2-to-1 multiplexer design, connecting theory with practical simulation.
+
+* Discovered Yosys for synthesis and learned why standard cell libraries come in different flavors to optimize for speed, power, and area.
+
+💡 These are not just small steps—they are the building blocks of every modern chip design. Each concept you practiced today forms the foundation for more advanced stages in the tapeout flow.
 
 
 
