@@ -20,14 +20,14 @@ This is not just theory—it’s about real, practical experience. By the end of
 ## Contents of the Day
 
 1. [What is a Simulator, Design, and Testbench?](#1-what-is-a-simulator-design-and-testbench)
-2. [Introduction to iverilog based flow](#2-Introduction-to-iverilog-based-flow)
-3. [Install the Required Tools ](#3-Install-the-Required-Tools)
-4. [LAB:How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example](#4-LAB:How-to-use-GTKWave-and-verilog-with-a-2-to-1-Multiplexer-example)
-5. [Verilog and test bench code analysis of the 2-to-1 Multiplexer](#5-Verilog-and-test-bench-code-analysis-of-the-2-to-1-Multiplexer)
-6. [Overview of Yosys and Setup Guide](#6-Overview-of-Yosys-and-Setup-Guide)
-7. [Introduction to Synthesis and gate libraries](#7-Introduction-to-Synthesis-and-gate-libraries)
+2. [Introduction to iverilog based flow](#2-introduction-to-iverilog-based-flow)
+3. [Install the Required Tools ](#3-install-the-required-tools)
+4. [Lab: How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example](#4-lab-how-to-use-gtkwave-and-iverilog-with-a-2-to-1-multiplexer-example)
+5. [Verilog and test bench code analysis of the 2-to-1 Multiplexer](#5-verilog-and-test-bench-code-analysis-of-the-2-to-1-multiplexer)
+6. [Overview of Yosys and Setup Guide](#6-overview-of-yosys-and-setup-guide)
+7. [Introduction to Synthesis and gate libraries](#7-introduction-to-synthesis-and-gate-libraries)
 8. [Synthesis Lab with Yosys](#8-synthesis-lab-with-yosys)
-9. [Summary](#7-summary)
+9. [Summary](#9-summary)
 
 ---
 
@@ -68,7 +68,8 @@ Here is an explanation of the iverilog-based simulation flow
 * **Design & Test Bench:** The simulation process starts with two main inputs: the **design** (your Verilog code for the circuit you're creating) and the **test bench** (another Verilog module that generates input stimuli and checks the output of your design).
 * **Icarus Verilog (iverilog):** These two files are compiled together by the **iverilog** compiler. Icarus Verilog is a free and open-source Verilog simulator. It takes the design and test bench files and creates a simulation executable.
 * **VCD File Generation:** During the simulation, the iverilog executable generates a **VCD (Value Change Dump) file**. This file records all the signal changes over time in your simulation. It's a text-based format that logs when and to what value a signal changes.
-* **GTKWave:** The VCD file, being a raw text log, isn't easy to read. You use a waveform viewer like **GTKWave** to open and visualize the data from the VCD file. GTKWave presents the signal changes as a graphical **waveform**, allowing you to see the timing relationships and values of all the signals in your design. * **Waveform Visualization:** The final output is the waveform display in GTKWave, which is crucial for debugging and verifying that your design behaves as expected according to the test bench stimuli.
+* **GTKWave:** The VCD file, being a raw text log, isn't easy to read. You use a waveform viewer like **GTKWave** to open and visualize the data from the VCD file. GTKWave presents the signal changes as a graphical.
+* **waveform:** Allowing you to see the timing relationships and values of all the signals in your design. * **Waveform Visualization:** The final output is the waveform display in GTKWave, which is crucial for debugging and verifying that your design behaves as expected according to the test bench stimuli.
 
 Here’s the typical simulation flow image:
 
@@ -87,7 +88,7 @@ sudo apt install gtkwave
 ```
 
 
-## 4. LAB:How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example 
+## 4. Lab: How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example 
 
 Let’s simulate a simple **2-to-1 multiplexer** using iverilog and gtkwave.
 
@@ -362,7 +363,7 @@ Let’s synthesize the `good_mux` design using Yosys!
 
     ```
 
-3. **Read the liberty library**
+2. **Read the liberty library**
 
    ```
    
@@ -370,20 +371,20 @@ Let’s synthesize the `good_mux` design using Yosys!
 
     ```
 
-5. **Read the Verilog code**
+3. **Read the Verilog code**
     ```
 
     read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/good_mux.v
 
     ```
 
-7. **Synthesize the design**
+4. **Synthesize the design**
     ```
     synth -top good_mux
 
     ```
 
-8. **Technology mapping**
+5. **Technology mapping**
     ```
 
     abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -393,7 +394,7 @@ Let’s synthesize the `good_mux` design using Yosys!
 
 	
 
-9. **Visualize the gate-level netlist**
+6. **Visualize the gate-level netlist**
 
     ```
 
@@ -403,7 +404,7 @@ Let’s synthesize the `good_mux` design using Yosys!
 
 <div align="center"> <img width="600" height="600" alt="GLN" src="https://github.com/user-attachments/assets/cd2496e7-ca74-4d80-bbf6-ace8581f91d9" /> </div>
 
-10. **Generating the Finalized Gate-Level Netlist**
+7. **Generating the Finalized Gate-Level Netlist**
 
 ```
 write_verilog -noattr good_mux_netlist.v
