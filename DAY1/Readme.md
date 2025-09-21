@@ -22,7 +22,7 @@ This is not just theory—it’s about real, practical experience. By the end of
 1. [What is a Simulator, Design, and Testbench?](#1-what-is-a-simulator-design-and-testbench)
 2. [Introduction to iverilog based flow](#2-Introduction-to-iverilog-based-flow)
 3. [Install the Required Tools ](#3-Install-the-Required-Tools)
-4. [LAB:How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example](#4-LAB:-How-to-use-GTKWave-and-verilog-with-a-2-to-1-Multiplexer-example)
+4. [LAB:How to use GTKWave and Iverilog with a 2-to-1 Multiplexer example](#4-LAB:How-to-use-GTKWave-and-verilog-with-a-2-to-1-Multiplexer-example)
 5. [Verilog and test bench code analysis of the 2-to-1 Multiplexer](#5-Verilog-and-test-bench-code-analysis-of-the-2-to-1-Multiplexer)
 6. [Overview of Yosys and Setup Guide](#6-Overview-of-Yosys-and-Setup-Guide)
 7. [Introduction to Synthesis and gate libraries](#7-Introduction-to-Synthesis-and-gate-libraries)
