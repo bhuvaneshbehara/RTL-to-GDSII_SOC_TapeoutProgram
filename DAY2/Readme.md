@@ -29,13 +29,13 @@ You’ve already taken your first steps into simulation and synthesis—now it�
 
   - [SKY130 PDK Overview](#sky130-pdk-overview)
 
-    - [Introduction to the SkyWater open-source PDK and its role in digital design](#introduction-to-skywater-open-source-pdk-and-its-role-in-digital-design)
+    - [Introduction to the Sky Water open-source PDK and its role in digital design](#introduction-to-sky-water-open-source-pdk-and-its-role-in-digital-design)
 
-  - [Decoding tt_025C_1v80 in the SKY130 PDK](#decoding-tt-025c-1v80-in-the-sky130-pdk)
+  - [Decoding tt_025C_1v80 in the SKY130 PDK](#decoding-tt_025c_1v80-in-the-sky130-pdk)
 
     - [Understanding process, voltage, and temperature (PVT) corners](#understanding-process-voltage-and-temperature-pvt-corners)
 
-  - [Opening and Exploring the .lib File](#opening-and-exploring-the-.lib-file)
+  - [Opening and Exploring the .lib File](#opening-and-exploring-the-lib-file)
 
     - [Structure of a Liberty file and the key information it provides (cells, pins, timing, power)](#structure-of-a-liberty-file-and-the-key-information-it-provides-cells-pins-timing-power)
 
@@ -50,7 +50,7 @@ You’ve already taken your first steps into simulation and synthesis—now it�
 
     - [Comparing trade-offs in terms of performance, area, and design complexity](#comparing-trade-offs-in-terms-of-performance-area-and-design-complexity)
 
-🔹[Flip-Flop Coding Styles](#flip-flop-styles)
+🔹[Flip-Flop Coding Styles](#flip-flop-coding-styles)
 
   - [Asynchronous Reset D Flip-Flop](#asynchronous-reset-d-flip-flop)
 
@@ -82,7 +82,7 @@ You’ve already taken your first steps into simulation and synthesis—now it�
 
  ## SKY130 PDK Overview
 
-  ##  Introduction to the SkyWater open-source PDK and its role in digital design:
+  ##  Introduction to the Sky Water open-source PDK and its role in digital design
 
   **PDK (Process Design Kit):** A collection of files that describe how a chip is fabricated in a particular technology node.
 
@@ -180,8 +180,11 @@ To open the sky130_fd_sc_hd__tt_025C_1v80.lib file:
 2. **Open the file:**
 
    ```
-   gedit sky130_fd_sc_hd__tt_025C_1v80.lib
+   gvim sky130_fd_sc_hd__tt_025C_1v80.lib
+
    ```
+<div align="center"> <img width="700" height="700" alt="lib file" src="https://github.com/user-attachments/assets/f7cba608-4cbc-4837-8210-7e4f080b47c7" /> </div>
+
  
 ---
 
@@ -245,6 +248,10 @@ In short: A .lib file tells the tool what cells exist, what pins they have, how 
 - Cross-module optimizations are limited.
 - Reporting can require additional configuration.
 
+## Example: 
+
+<div align="center"> <img width="500" height="500" alt="hierarchy" src="https://github.com/user-attachments/assets/c7cb7d69-70c8-4473-9304-e8ce0dc8657b" /> </div>
+ 
 
 
 ### Flattened Synthesis
@@ -260,6 +267,12 @@ In short: A .lib file tells the tool what cells exist, what pins they have, how 
 - Longer runtime for large designs.
 - Loss of hierarchy complicates debugging and reporting.
 - Can increase memory usage and netlist complexity.
+
+## Example: 
+<div align="center"> <img width="700" height="700" alt="flatten1" src="https://github.com/user-attachments/assets/1076bc13-de98-4d07-a82e-50b94c416e87" />
+</div>
+
+
 
 # Key Differences
   ## Comparing trade-offs in terms of performance, area, and design complexity
@@ -439,7 +452,7 @@ else Q <= D; → captures input D normally on clock edge
 
    ```
 
-   iverilog dff_asyncres.v tb_dff_asyncres.v
+   iverilog dff_syncres.v tb_dff_syncres.v
 
    ```
 2. **Run:**
@@ -453,10 +466,11 @@ else Q <= D; → captures input D normally on clock edge
    ```
    
 
-   gtkwave tb_dff_asyncres.vcd
+   gtkwave tb_dff_syncres.vcd
 
    ```
-
+<div align="center"> <img width="700" height="700" alt="gtkwave syncres" src="https://github.com/user-attachments/assets/4efe4bfe-7f03-40a2-a26f-60e46867e0f0" />
+</div>
   
 
 
@@ -482,14 +496,14 @@ else Q <= D; → captures input D normally on clock edge
 4. Read Verilog code:
    ```
 
-   read_verilog /path/to/dff_asyncres.v
+   read_verilog /path/to/dff_syncres.v
 
    ```
 5. Synthesize:
 
    ```
 
-   synth -top dff_asyncres
+   synth -top dff_syncres
 
    ```
 7. Map flip-flops:
@@ -513,6 +527,9 @@ else Q <= D; → captures input D normally on clock edge
 show
 
    ```
+
+<div align="center"> <img width="700" height="700" alt="dffsyncres" src="https://github.com/user-attachments/assets/58e7a8cf-78b7-4e8a-b875-057fc7af3121" />
+</div>
 
 ---
 
