@@ -21,7 +21,7 @@ You’ve come a long way—building a strong foundation in RTL design, synthesis
 
 - [1. Gate-Level Simulation (GLS)](#1-gate-level-simulation-gls)
   
-  - [1.1 Types of Gate-level Simulation](#11-types-of-gatelevel-simulation)
+  - [1.1 Types of Gate-level Simulation](#11-types-of-gate-level-simulation)
     
 - [2. Blocking vs. Non-Blocking Assignments in Verilog](#2-blocking-vs-non-blocking-assignments-in-verilog)
   
@@ -108,7 +108,7 @@ Verilog has two types of assignments used in procedural blocks:
 
 - Non-Blocking Assignment `(<=)`
 
-### 2.1 Blocking Statements
+### 2.1 Blocking Assignment
 
 Syntax:
 
@@ -127,7 +127,7 @@ variable = expression;
 
 ### Example:
 
-```
+```verilog
 always @(*) begin
     a = b;   // Executes first
     c = a;   // Executes after a = b
@@ -139,7 +139,7 @@ end
 - Here, `c` gets the new value of `a` immediately after `a = b`.
 
 
-### 2.2 Non-Blocking Assignment (<=)
+### 2.2 Non-Blocking Assignment
 
 Syntax:
 
@@ -158,7 +158,7 @@ variable <= expression;
 
 ### Example:
 
-```
+```verilog
 always @(posedge clk) begin
     a <= b;   // Scheduled to update at the end of this time step
     c <= a;   // c gets the OLD value of a, not the new b
@@ -258,11 +258,11 @@ end
 # 4. Labs
 
 
-### Lab 1: Ternary Operator MUX
+## Lab 1: Ternary Operator MUX
 
 Verilog code for a simple 2:1 multiplexer using a ternary operator:
 
-```
+```verilog
 
 module ternary_operator_mux (input i0, input i1, input sel, output y);
   assign y = sel ? i1 : i0;
@@ -275,7 +275,7 @@ endmodule
  <div align="center"> <img width="700" height="700" alt="glstb" src="https://github.com/user-attachments/assets/7711e3b1-228a-43a9-bc2e-5dc513198988" /> </div>
 
 
- ### Lab 2: Synthesis Using Yosys
+## Lab 2: Synthesis Using Yosys
 
 Synthesize the above MUX using Yosys.  
 _Follow the standard Yosys synthesis flow._
@@ -283,7 +283,7 @@ _Follow the standard Yosys synthesis flow._
 <div align="center"> <img width="700" height="700" alt="ternary" src="https://github.com/user-attachments/assets/cb67baf8-d241-4c6a-9a04-708931b3cd7c" /> </div>  
 
 
-### Lab 3: Gate-Level Simulation (GLS) of MUX
+## Lab 3: Gate-Level Simulation (GLS) of MUX
 
 Run GLS for the synthesized MUX.  
 Use this command (adjust paths as needed):
@@ -296,11 +296,12 @@ iverilog /path/to/primitives.v /path/to/sky130_fd_sc_hd.v ternary_operator_mux.v
 <div align="center"> <img width="700" height="700" alt="glsternarytb" src="https://github.com/user-attachments/assets/ea101267-5503-4968-aab9-c11ae76806c8" /> </div>
 
 
-### Lab 4: Bad MUX Example 
+## Lab 4: Bad MUX Example 
 
 Verilog code with intentional issues:
 
 ```verilog
+
 module bad_mux (input i0, input i1, input sel, output reg y);
   always @ (sel) begin
     if (sel)
@@ -311,28 +312,89 @@ module bad_mux (input i0, input i1, input sel, output reg y);
 endmodule
 ```
 
-#### Issues:
+### Issues:
+
 - **Incomplete sensitivity list**: Should include `i0`, `i1`, and `sel`.
+
 - **Non-blocking assignment in combinational logic**: Should use blocking assignments (`=`).
 
+
 **Corrected version:**
+
 ```verilog
+
 always @ (*) begin
   if (sel)
     y = i1;
   else
     y = i0;
 end
+
 ```
 
 
-### Lab 5: GLS of Bad MUX
+## Lab 5: GLS of Bad MUX
 
 Perform GLS on the `bad_mux`.  
 Expect simulation mismatches or warnings due to above issues.
 
-<div align="center"><img width="700" height="700" alt="glsbadmuxtb" src="https://github.com/user-attachments/assets/bcf37b29-76c6-4a0c-8467-291042d26799" /> </div>
+<div align="center"><img width="700" height="700" alt="glsbadmuxtb" src="https://github.com/user-attachments/assets/bcf37b29-76c6-4a0c-8467-291042d26799" /></div>
 
+
+
+## Lab 6: Blocking Assignment Caveat
+
+Verilog code:
+
+```verilog
+
+module blocking_caveat (input a, input b, input c, output reg d);
+  reg x;
+  always @ (*) begin
+    d = x & c;
+    x = a | b;
+  end
+endmodule
+
+```
+
+### What’s wrong?
+
+- The order of assignments causes `d` to use the old value of `x`—not the newly computed value.
+
+- **Best Practice:** Assign intermediate variables before using them.
+
+**Corrected order:**
+
+```verilog
+
+always @ (*) begin
+  x = a | b;
+  d = x & c;
+end
+
+```
+
+<div align="center"><img width="700" height="700" alt="caveattb" src="https://github.com/user-attachments/assets/d0d66a35-729f-4623-92ef-478508126675" /> </div>
+
+## Lab 7: Synthesis of the Blocking Caveat Module
+
+Synthesize the corrected version of the module and observe the results.
+
+<div align="center"><img width="700" height="700" alt="synthesiscaveat" src="https://github.com/user-attachments/assets/154980f0-92f4-411f-9185-38f55cf52202" /> </div>
+
+
+# 5. Summary
+
+Completing Day 4 of your journey toward mastering the RTL-to-GDSII flow! 🎉
+
+Today, we explored:
+
+- How Gate-Level Simulation helps verify post-synthesis timing and functional behavior.
+
+- The subtle but critical differences between blocking (=) and non-blocking (<=) assignments in Verilog and their impact on sequential logic.
+
+- Common causes of Synthesis-Simulation Mismatches and strategies to detect and fix them early in your design flow.
 
 
 
