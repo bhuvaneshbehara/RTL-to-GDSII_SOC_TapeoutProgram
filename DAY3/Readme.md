@@ -22,7 +22,7 @@ So far, you’ve learned how to simulate designs, explore synthesis, and underst
 
 # Contents of the day
 
-🔹 [What is optimization?](#what-is-optimization?)
+🔹 [What is optimization?](#what-is-optimization)
   
 🔹 [Types of Optimization](#types-of-optimization)
 
@@ -30,16 +30,16 @@ So far, you’ve learned how to simulate designs, explore synthesis, and underst
 
   - [2. Sequential logic Optimization](#2-sequential-logic-optimization)
 
-🔹 [Different techniques used in combinational logic optimization](#different-techniques-used-in-combinational-logic-optimization)
+🔹 [🔧 Different techniques used in combinational logic optimization](#-different-techniques-used-in-combinational-logic-optimization)
 
    - [i. Squeezing the Logic](#i-squeezing-the-logic)
    
    - [ii. Constant Propagation](#ii-constant-propagation)
    
-   - [iii. Boolean Logic Optimisation](#iii-boolean-logic-optimization)
+   - [iii. Boolean Logic Optimisation](#iii-boolean-logic-optimisation)
 
 
-🔹 [Different techniques used in sequential logic optimization](#different-techniques-used-in-sequential-logic-optimization)
+🔹 [🔧 Different techniques used in sequential logic optimization](#-different-techniques-used-in-sequential-logic-optimization)
 
   - [Basic](#basic)
 
@@ -61,6 +61,7 @@ So far, you’ve learned how to simulate designs, explore synthesis, and underst
   - [Lab 3](#lab-3)
   - [Lab 4](#lab-4)
   - [Lab 5](#lab-5)
+  - [Lab Work](#lab-work)
 
 🔹 [Summary](#summary)
 
@@ -114,7 +115,7 @@ So far, you’ve learned how to simulate designs, explore synthesis, and underst
 
 - Simplify design: Optimizes FSMs and sequential paths for easier implementation.
 
-# Different techniques used in combinational logic optimization
+# 🔧 Different techniques used in combinational logic optimization
 
 ## i. Squeezing the Logic
 
@@ -122,7 +123,7 @@ So far, you’ve learned how to simulate designs, explore synthesis, and underst
 
 - The tool restructures logic expressions so that fewer resources (area) are used.
 
-## How It Works
+## ✨ How It Works
 
 - Identify duplicate logic: Detect if the same logic expression appears multiple times.
 
@@ -137,7 +138,7 @@ So far, you’ve learned how to simulate designs, explore synthesis, and underst
 - Combine small expressions: Reduce the number of intermediate wires.
 
 
-## Benefits:
+## <img width="50" height="40" alt="image" src="https://github.com/user-attachments/assets/72fd4468-7fea-4563-9e77-a6c72cdb367e" /> Benefits:
 
 - Area savings → fewer gates → smaller chip size
 
@@ -148,7 +149,7 @@ So far, you’ve learned how to simulate designs, explore synthesis, and underst
 **Constant propagation** is the process of identifying signals (wires or inputs) in a combinational circuit that always have a constant value (0 or 1) and then replacing them with that constant throughout the logic. This helps to simplify the logic, because gates fed by constants often produce predictable outputs.
 
  
- ## How It Works
+ ## ✨ How It Works
 
 - The tool scans the logic network.
 
@@ -158,7 +159,7 @@ So far, you’ve learned how to simulate designs, explore synthesis, and underst
 
 - Propagates the simplification further (sometimes enabling more constant simplifications downstream).
 
-## Example
+## 📌 Example
 
 - Suppose you have a small combinational logic:
 ```
@@ -182,7 +183,7 @@ Y = 0 & B = 0
 ```
  The output is constant 0, and the gate can be removed entirely.
 
-## Benefits
+## <img width="50" height="40" alt="image" src="https://github.com/user-attachments/assets/72fd4468-7fea-4563-9e77-a6c72cdb367e" /> Benefits
 
 - Reduces gate count → smaller area.
 
@@ -194,7 +195,7 @@ Y = 0 & B = 0
 
 **Boolean optimization** is the process of simplifying combinational logic expressions using Boolean algebra rules. The goal is to minimize the number of gates and logic levels without changing the circuit’s functionality.  
  
-## How It Works
+## ✨ How It Works
 
 - Identify logic expressions in the design.
 
@@ -212,7 +213,7 @@ Y = 0 & B = 0
 
 - Check for redundancy: Remove gates or wires that are no longer needed.
 
-## Example
+## 📌 Example
 
 - Original logic:
 ```
@@ -228,7 +229,7 @@ Y = A               # simplified
 
 - Result: Original two AND gates and one OR gate → simplified to a single wire.
 
-## Benefits
+## <img width="50" height="40" alt="image" src="https://github.com/user-attachments/assets/72fd4468-7fea-4563-9e77-a6c72cdb367e" /> Benefits
 
 - Smaller area → fewer gates and wires.
 
@@ -238,7 +239,7 @@ Y = A               # simplified
 
 - Enables further optimization → simpler logic makes sequential and retiming optimizations more effective.
 
-# Different techniques used in sequential logic optimization
+# 🔧 Different techniques used in sequential logic optimization
 
 ## Basic
 
@@ -246,7 +247,7 @@ Y = A               # simplified
 
 **Sequential constant propagation** is the process of identifying signals in sequential circuits (with flip-flops or registers) that always take a constant value over time and propagating that constant through the logic.
 
-## How it works
+## ✨ How it works
 
 - Analyze sequential elements like D flip-flops and registers.
 
@@ -282,7 +283,7 @@ end
 
 - Step 3: The AND gate driving B can be removed.
 
-## Benefits
+## <img width="50" height="40" alt="image" src="https://github.com/user-attachments/assets/72fd4468-7fea-4563-9e77-a6c72cdb367e" /> Benefits
 
 - Reduces flip-flops and combinational logic → smaller area.
 
@@ -298,7 +299,7 @@ end
 
 **State optimization** reduces the number of states in a finite state machine (FSM) without changing its functionality.
 
-## How it works:
+## ✨ How it works:
 
 - Detects equivalent or unused states.
 
@@ -306,7 +307,7 @@ end
 
 - Minimizes the number of flip-flops needed to encode states.
 
-## Example:
+## 📌 Example:
 ```
 Original FSM: 8 states, some perform the same output.
 
@@ -314,7 +315,7 @@ After state optimization: 5 states → fewer flip-flops and simpler logic.
 
 ```
 
-## Benefits:
+## <img width="50" height="40" alt="image" src="https://github.com/user-attachments/assets/72fd4468-7fea-4563-9e77-a6c72cdb367e" /> Benefits:
 
 - Reduces area (fewer flip-flops).
 
@@ -327,7 +328,7 @@ After state optimization: 5 states → fewer flip-flops and simpler logic.
 
 **Retiming** moves flip-flops across combinational logic to optimize timing, area, or power.
 
-## How it works:
+## ✨ How it works:
 
 - Shifts registers forward or backward in the circuit.
 
@@ -335,7 +336,7 @@ After state optimization: 5 states → fewer flip-flops and simpler logic.
 
 - Targets critical path reduction.
 
-## Example:
+## 📌 Example:
 
 ```
 Before Retiming:  A --[AND]--[FF]-- B
@@ -345,7 +346,7 @@ After Retiming:   [FF]-- A --[AND]-- B
 ```
 - Moves the flip-flop to balance delays.
 
-## Benefits:
+## <img width="50" height="40" alt="image" src="https://github.com/user-attachments/assets/72fd4468-7fea-4563-9e77-a6c72cdb367e" /> Benefits:
 
 - Reduces critical path delay → faster circuits.
 
@@ -357,7 +358,7 @@ After Retiming:   [FF]-- A --[AND]-- B
 
 **Sequential logic cloning** creates duplicate copies of sequential logic elements (flip-flops, registers, small combinational blocks) to improve performance while respecting floorplan constraints.
 
-## How it works:
+## ✨ How it works:
 
 - Identify heavily loaded or timing-critical flip-flops.
 
@@ -365,14 +366,14 @@ After Retiming:   [FF]-- A --[AND]-- B
 
 - Reduces wire delay by physically bringing logic closer to where it is used.
 
-## Example:
+## 📌 Example:
 
 ```
 
 A single flip-flop drives 4 distant combinational blocks → cloning creates 2 or more copies to reduce interconnect delay.
 
 ```
-## Benefits:
+## <img width="50" height="40" alt="image" src="https://github.com/user-attachments/assets/72fd4468-7fea-4563-9e77-a6c72cdb367e" /> Benefits:
 
 - Improves timing by reducing long interconnect delays.
 
