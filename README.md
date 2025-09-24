@@ -5,14 +5,14 @@ Welcome to my journey through the VSD-RISCV SOC program! Below are links to my d
 
 ## 🔽 Links to Detailed Logs
 
-| Day   | Topics Covered                                                                                                    | Status       |
-|-------|-------------------------------------------------------------------------------------------------------------------|--------------|
-| Day 0 | [Opensource Tools Installation](./DAY0)                                                                           | ✅ Done      |
-| Day 1 | [Introduction to Verilog RTL Design & Synthesis](./DAY1)                                                          | ✅ Done      |     
-| Day 2 | [Timing Libraries, Synthesis Approaches, and Efficient Flip-Flop Coding](./DAY2)                                  | ✅ Done      |
-| Day 3 | [ Optimization in Synthesis – Types & Techniques](./DAY3)                                                         | ✅ Done      |
-| Day 4 | [ Gate-Level Simulation (GLS), Blocking vs. Non-Blocking in Verilog, and Synthesis-Simulation Mismatch](./DAY4)   | ✅ Done      |
-| Day 5 | [Optimization in Synthesis](./DAY5)                                                                               | ✅ Done      |
+| Day      | Topics Covered                                                                                                    | Status       |
+|----------|-------------------------------------------------------------------------------------------------------------------|--------------|
+| Day 0    | [Opensource Tools Installation](./DAY0)                                                                           | ✅ Done      |
+| Day 1    | [Introduction to Verilog RTL Design & Synthesis](./DAY1)                                                          | ✅ Done      |     
+| Day 2    | [Timing Libraries, Synthesis Approaches, and Efficient Flip-Flop Coding](./DAY2)                                  | ✅ Done      |
+| Day 3    | [ Optimization in Synthesis – Types & Techniques](./DAY3)                                                         | ✅ Done      |
+| Day 4    | [ Gate-Level Simulation (GLS), Blocking vs. Non-Blocking in Verilog, and Synthesis-Simulation Mismatch](./DAY4)   | ✅ Done      |
+| Day 5    | [Optimization in Synthesis](./DAY5)                                                                               | ✅ Done      |
 
 # <img width="50" height="40" alt="image" src="https://github.com/user-attachments/assets/b4d1709a-4e0b-4380-bad9-14200147e049" />  Program Motto
 
