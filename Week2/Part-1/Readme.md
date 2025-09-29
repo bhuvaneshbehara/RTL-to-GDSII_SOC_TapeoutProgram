@@ -8,8 +8,8 @@
 
 # contents of the day
 
-1. [What is a System-on-Chip (SoC)?](#1-What-is-a-System-on-Chip-(SoC)?)
-   - [Why SoC?](#why-soc?)
+1. [What is a System-on-Chip (SoC)?](#1-What-is-a-System-on-Chip-(SoC))
+   - [Why SoC?](#why-soc)
    - [Features of SoC](#features-of-soc)
    - [Challenges with SoC](#challenges-with-soc)
    - [How SoC will work?](#how-soc-will-work)     
@@ -243,7 +243,7 @@ A typical **SoC** consists of four main building blocks:
 
 <div align="center"> <img width="481" height="500" alt="Screenshot 2025-09-25 181723" src="https://github.com/user-attachments/assets/999a041f-7555-4360-994e-ff4b372a1d66" /> </div>
 
-## Introduction to BabySoC
+## 4. Introduction to BabySoC
 
   VSDBabySoC is a small yet powerful RISCV-based SoC. The main purpose of designing such a small SoC is to test three open-source IP cores together for the first time and calibrate the analog part of it. VSDBabySoC contains one RVMYTH microprocessor, an 8x-PLL to generate a stable clock, and a 10-bit DAC to communicate with other analog devices.
 
@@ -313,30 +313,30 @@ communications systems.
 
 <div align="center"> <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/b798e385-4f11-4bdb-bc9f-8a5050bdf702" /> </div>
 
-# Why BabySoC is a simplified model for learning SoC concepts?
+## 5. Why BabySoC is a simplified model for learning SoC concepts?
 
 
-- BabySoC is a minimal, educational version of a SoC used for training and research.
+   - BabySoC is a minimal, educational version of a SoC used for training and research.
 
-- Instead of implementing complex CPUs and high-speed interconnects, BabySoC includes:
+   - Instead of implementing complex CPUs and high-speed interconnects, BabySoC includes:
 
-  - A small RISC-V core or microcontroller-like CPU.
+     - A small RISC-V core or microcontroller-like CPU.
 
-  - Limited memory (small SRAM/ROM).
+     - Limited memory (small SRAM/ROM).
  
-  - A few simple peripherals (GPIO, UART).
+     - A few simple peripherals (GPIO, UART).
 
-  - A basic bus interconnect (e.g., APB or AXI-lite).
+     - A basic bus interconnect (e.g., APB or AXI-lite).
 
-- Purpose:
+   - Purpose:
 
-  - Helps students and beginners understand SoC architecture without being overwhelmed by industry-scale designs.
+     - Helps students and beginners understand SoC architecture without being overwhelmed by industry-scale designs.
 
-  - Easier to simulate and synthesize.
+     - Easier to simulate and synthesize.
 
-  - Reduces design complexity while covering core SoC concepts.
+     - Reduces design complexity while covering core SoC concepts.
  
-  ## The role of functional modelling before RTL and physical design stages
+## 6. The role of functional modelling before RTL and physical design stages
 
   SoC design is a multi-stage process. Before going into RTL coding (Verilog/VHDL) and Physical Design (layout, place & route), functional modelling plays a critical role:
 
@@ -372,7 +372,7 @@ communications systems.
 
 👉 Without functional modelling, RTL and physical design teams risk implementing a system that is functionally incorrect, suboptimal, or not aligned with product requirements.
 
-# Summary
+## 7. Summary
 
 - SoCs enable compact, efficient, high-performance embedded systems.
 
