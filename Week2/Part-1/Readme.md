@@ -16,12 +16,12 @@
 2. [Components of a typical SoC](#2-components-of-a-typical-soc)
 3. [Types of SoC](#3-types-of-soc)
 4. [Introduction to BabySoC](#4-introduction-to-babysoc)
-5. [Why BabySoC is a simplified model for learning SoC concepts?](#4-why-babysoc-is-a-simplified-model-for-learning-soc-concepts?)
-6. [The role of functional modelling before RTL and physical design stages](#5-the-role-of-functional-modelling-before-rtl-and-physical-design-stages)
-7. [Summary](#summary)
+5. [Why BabySoC is a simplified model for learning SoC concepts?](#5-why-babysoc-is-a-simplified-model-for-learning-soc-concepts?)
+6. [The role of functional modelling before RTL and physical design stages](#6-the-role-of-functional-modelling-before-rtl-and-physical-design-stages)
+7. [Summary](#7-summary)
 
 
-## What is a System-on-Chip (SoC)?
+## 1. What is a System-on-Chip (SoC)?
 
 - A System-on-Chip (SoC) is an integrated circuit (IC) that combines all the essential components of a complete computer or electronic system into a single chip.
 
