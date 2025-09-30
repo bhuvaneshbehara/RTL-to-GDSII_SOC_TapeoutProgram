@@ -8,7 +8,7 @@
 
 # contents of the day
 
-1. [What is a System-on-Chip (SoC)?](#1-What-is-a-System-on-Chip-(SoC))
+1. [What is a System-on-Chip (SoC)?](#1-What-is-a-System-on-Chip-(SoC)?)
    - [Why SoC?](#why-soc)
    - [Features of SoC](#features-of-soc)
    - [Challenges with SoC](#challenges-with-soc)
@@ -246,6 +246,9 @@ A typical **SoC** consists of four main building blocks:
 ## 4. Introduction to BabySoC
 
   VSDBabySoC is a small yet powerful RISCV-based SoC. The main purpose of designing such a small SoC is to test three open-source IP cores together for the first time and calibrate the analog part of it. VSDBabySoC contains one RVMYTH microprocessor, an 8x-PLL to generate a stable clock, and a 10-bit DAC to communicate with other analog devices.
+
+<div align="center"><img width="770" height="770" alt="image" src="https://github.com/user-attachments/assets/1dfd2a87-99bb-4af7-88b3-a93709fa8d4c" /> </div> <br>
+
 
 **components of BabySoC**
 
